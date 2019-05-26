@@ -24,7 +24,7 @@ type geoResp struct {
 }
 
 func ParseGeo(lat, lng float64) string {
-    resp, _ := http.Get(fmt.Sprintf("https://geocode-maps.yandex.ru/1.x/?apikey=6dd24157-ee18-4702-87df-f50c73f40e0d&format=json&geocode=%f,%f", lat, lng))
+    resp, _ := http.Get(fmt.Sprintf("https://geocode-maps.yandex.ru/1.x/?apikey=6dd24157-ee18-4702-87df-f50c73f40e0d&format=json&geocode=%f,%f", lng, lat))
     defer resp.Body.Close()
     body, _ := ioutil.ReadAll(resp.Body)
 

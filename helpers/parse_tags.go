@@ -11,17 +11,17 @@ var visualRecognition, _ = visualrecognitionv3.NewVisualRecognitionV3(&visualrec
 })
 
 var imageTags = map[string][]string{
-    "garbage": []string{"garbage heap","garbage","bottle green color","receptacle","trash can","litter basket","litter"},
-    "graffiti": []string{"graffiti"},
-    "road": []string{"road","curved road","bypath","Highway","arterial road","autostrada (highway)","highway","autobahn (highway)","carriageway","street","'pothole (road)", "hole", "sinkhole"},
-    "building": []string{"building","government building","balcony (of building)","tenement house","apartment building","cornice (building)","palace","shouldered arch","arch","guildhall (ornate building)","facade"},
+    "garbage":  {"garbage heap", "garbage", "bottle green color", "receptacle", "trash can", "litter basket", "litter"},
+    "graffiti": {"graffiti"},
+    "road":     {"road", "curved road", "bypath", "Highway", "arterial road", "autostrada (highway)", "highway", "autobahn (highway)", "carriageway", "street", "pothole (road)", "hole", "sinkhole"},
+    "building": {"building", "government building", "balcony (of building)", "tenement house", "apartment building", "cornice (building)", "palace", "shouldered arch", "arch", "guildhall (ornate building)", "facade"},
 }
 
 var wordsTags = map[string][]string{
-    "garbage": []string{"мусор","пакет","мусорный","урна","ведро","бычок","бутылка","окурок","семечко","отходы","грязь","грязные","говно","фекалии","cрань","хлам","плесень","отбросы","пыль","труха","помойка"},
-    "graffiti": []string{"граффити","вандал","разрисовывать"},
-    "road": []string{"дорога","яма","грунтовка","светофор","пробка","перекресток","шоссе","трасса","мост","разметка","переход","затор","улица","грунт"},
-    "building": []string{"здание","стена","забросить","постройка","стройка","жилище","жкх","ресторан","магазин","церковь","храм","отопление","башня","подъезд"},
+    "garbage":  {"мусор", "пакет", "мусорный", "урна", "ведро", "бычок", "бутылка", "окурок", "семечко", "отходы", "грязь", "грязные", "говно", "фекалии", "cрань", "хлам", "плесень", "отбросы", "пыль", "труха", "помойка"},
+    "graffiti": {"граффити", "вандал", "разрисовывать"},
+    "road":     {"дорога", "яма", "грунтовка", "светофор", "пробка", "перекресток", "шоссе", "трасса", "мост", "разметка", "переход", "затор", "улица", "грунт"},
+    "building": {"здание", "стена", "забросить", "постройка", "стройка", "жилище", "жкх", "ресторан", "магазин", "церковь", "храм", "отопление", "башня", "подъезд"},
 }
 
 func ParseImageTags(url string) (tags map[string]bool) {
